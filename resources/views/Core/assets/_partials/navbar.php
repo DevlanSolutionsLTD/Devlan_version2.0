@@ -1,14 +1,4 @@
-<?php
-  $user_id = $_SESSION['user_id'];
-  $ret="SELECT  * FROM  users WHERE user_id=?";
-  $stmt= $mysqli->prepare($ret) ;
-  $stmt->bind_param('i',$user_id);
-  $stmt->execute() ;//ok
-  $res=$stmt->get_result();
 
-    while($row=$res->fetch_object())
-    {
-?>
             <div class="navbar-custom">
                 <ul class="list-unstyled topnav-menu float-right mb-0">
 
@@ -30,47 +20,75 @@
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="fe-bell noti-icon"></i>
-                            <span class="badge badge-danger rounded-circle noti-icon-badge">1</span>
+
+                            <?php
+                                //count Number of Notifications for logged in user.
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  notifications WHERE  user_id = ? ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($notifications);
+                                $stmt->fetch();
+                                $stmt->close();
+                            ?>
+
+                            <span class="badge badge-danger rounded-circle noti-icon-badge"><?php echo $notifications;?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
                             <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5 class="m-0">
-                                    <span class="float-right">
-                                        <a href="#" class="text-dark">
-                                            <small>Clear All</small>
-                                        </a>
-                                    </span>Notifications
-                                </h5>
-                            </div>
-
+                            
                             <div class="slimscroll noti-scroll">
+                            <?php
+                                //get logged in user notifications
+                                $user_id = $_SESSION['user_id'];
+                                $ret="SELECT  * FROM  notifications WHERE  user_id = ? LIMIT 15";
+                                $stmt= $mysqli->prepare($ret) ;
+                                $stmt->bind_param('i',$user_id);
+                                $stmt->execute() ;//ok
+                                $res=$stmt->get_result();
 
+                                while($row=$res->fetch_object())
+                                {
+                                //trim timestamps to DD-YY-MMMM
+                                    $DT = $row->n_tstamp;
+                            ?>
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                     <div class="notify-icon">
-                                        <img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                    <p class="notify-details">Notification Name</p>
+                                        <img src="assets/img/devlan-logo.png" class="img-fluid rounded-circle" alt="" /> </div>
+                                    <p class="notify-details"><?php echo $row->n_name;?></p>
                                     <p class="text-muted mb-0 user-msg">
-                                        <small>Notification Content</small>
+                                        <small><?php echo $row->n_desc;?></small>
                                     </p>
                                 </a>
+                            <?php }?>    
 
                             </div>
 
                             <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                            <a href="devlan_pages_account.php#notifications" class="dropdown-item text-center text-primary notify-item notify-all">
                                 View all
                                 <i class="fi-arrow-right"></i>
                             </a>
 
                         </div>
                     </li>
+                <?php
+                    $user_id = $_SESSION['user_id'];
+                    $ret="SELECT  * FROM  users WHERE user_id=?";
+                    $stmt= $mysqli->prepare($ret) ;
+                    $stmt->bind_param('i',$user_id);
+                    $stmt->execute() ;//ok
+                    $res=$stmt->get_result();
 
+                    while($row=$res->fetch_object())
+                {
+                ?>
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                            <img src="assets/img/DevLanners/<?php echo $row->dpic;?>" alt="user-image" class="rounded-circle">
                             <span class="pro-user-name ml-1">
                                 <?php echo $row->username;?> <i class="mdi mdi-chevron-down"></i> 
                             </span>
@@ -109,6 +127,7 @@
 
                         </div>
                     </li>
+                    <?php }?>
 
                     <li class="dropdown notification-list">
                         <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
@@ -147,141 +166,21 @@
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item">
                                 <i class="fe-briefcase mr-1"></i>
-                                <span>New Projects</span>
+                                <span>New Project</span>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-user mr-1"></i>
-                                <span>Create Users</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-bar-chart-line- mr-1"></i>
-                                <span>Revenue Report</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-settings mr-1"></i>
-                                <span>Settings</span>
-                            </a>
-
+                            
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item">
                                 <i class="fe-headphones mr-1"></i>
-                                <span>Help & Support</span>
+                                <span>Devlan Forum</span>
                             </a>
 
                         </div>
                     </li>
 
-                    <li class="dropdown dropdown-mega d-none d-lg-block">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            Mega Menu
-                            <i class="mdi mdi-chevron-down"></i> 
-                        </a>
-                        <div class="dropdown-menu dropdown-megamenu">
-                            <div class="row">
-                                <div class="col-sm-8">
-                        
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <h5 class="text-dark mt-0">UI Components</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Widgets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Nestable List</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Range Sliders</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Masonry Items</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Sweet Alerts</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Treeview Page</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Tour Page</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <h5 class="text-dark mt-0">Applications</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">eCommerce Pages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">CRM Pages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Email</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Calendar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Team Contacts</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Task Board</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Email Templates</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <h5 class="text-dark mt-0">Extra Pages</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Left Sidebar with User</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Menu Collapsed</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Small Left Sidebar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">New Header Style</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Search Result</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Gallery Pages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Maintenance & Coming Soon</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="text-center mt-3">
-                                        <h3 class="text-dark">Special Discount Sale!</h3>
-                                        <h4>Save up to 70% off.</h4>
-                                        <button class="btn btn-primary btn-rounded mt-3">Download Now</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
                 </ul>
             </div>
-<?php }?>
+
