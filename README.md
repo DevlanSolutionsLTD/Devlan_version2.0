@@ -14,6 +14,8 @@ DevLan is an oline platform  that provides hosting for software development vers
 ## Screenshot
 
 <p align="center"><img src="https://github.com/Trans-DevLan/Devlan_version2.0/blob/master/public/Screenshot.png"></p>
+<p align="center"><img src="https://github.com/Trans-DevLan/Devlan_version2.0/blob/master/public/Screenshot.1.png"></p>
+
 
 ## License
 
