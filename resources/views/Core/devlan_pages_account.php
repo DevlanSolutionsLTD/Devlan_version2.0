@@ -162,7 +162,7 @@
                                                     <?php
                                                         //get logged in user commits
                                                         $user_id = $_SESSION['user_id'];
-                                                        $ret="SELECT  * FROM  projects WHERE  user_id = ? LIMIT 15";
+                                                        $ret="SELECT  * FROM  projects WHERE  user_id = ?  ORDER BY `projects`.`date_created` DESC LIMIT 15 ";
                                                         $stmt= $mysqli->prepare($ret) ;
                                                         $stmt->bind_param('i',$user_id);
                                                         $stmt->execute() ;//ok
@@ -174,11 +174,26 @@
                                                             $DT = $row->date_created;
                                                     ?>
                                                         <li class="timeline-sm-item">
-                                                            <span class="timeline-sm-date"><?php echo date("d-M-Y", strtotime($DT));?></span>
-                                                            <h5 class="mt-0 mb-1"><a href=""><?php echo $row->project_name;?></a></h5>
-                                                            <p><u><?php echo $row->project_category;?></u></p>
-                                                            <p class="text-muted mt-2"><?php echo $row->project_desc;?></p><hr>
-                                                           
+                                                            <span class="timeline-sm-date">
+                                                                <?php echo date("d-M-Y", strtotime($DT));?>
+                                                            </span>
+                                                            <h5 class="mt-0 mb-1">
+                                                                <a href="">
+                                                                    <?php echo $row->project_name;?>
+                                                                </a>
+                                                            </h5>
+                                                            <p>
+                                                                <u>
+                                                                    <?php echo $row->project_category;?>
+                                                                </u>
+                                                            </p>
+                                                            <p class="text-muted mt-2">
+                                                                <?php echo $row->project_desc;?>
+                                                            </p>
+                                                            <!--View Commit-->
+                                                            <a href="devlan_pages_view_single_commit.php?project_id=<?php echo $row->project_id;?>" class="float-right btn btn-outline-info"><i class="fa fa-eye"></i> <i class="mdi mdi-source-pull"></i> View Commit</a><br>
+                                                            
+                                                            <hr>
 
                                                         </li>
                                                     <?php }?>
