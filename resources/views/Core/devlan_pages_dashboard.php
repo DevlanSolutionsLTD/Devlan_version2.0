@@ -50,6 +50,7 @@
                             <!-- end page title --> 
 
                             <div class="row">
+
                                 <div class="col-md-4">
                                     <div class="card-box bg-pattern">
                                         <div class="row">
@@ -60,13 +61,23 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="text-right">
-                                                    <h3 class="text-dark my-1"><span data-plugin="counterup">120</span></h3>
-                                                    <p class="text-muted mb-0 text-truncate">Active Deals</p>
+                                                    <?php
+                                                        //count Number of front end projects
+                                                        $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'FrontEnd WebApp' ";
+                                                        $stmt = $mysqli->prepare($result);
+                                                        //$stmt->bind_param('i', $user_id);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($front_end);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                    ?>
+                                                    <h3 class="text-dark my-1"><span data-plugin="counterup"><?php echo $front_end;?></span></h3>
+                                                    <p class="text-muted mb-0 text-truncate">FrondEnd Projects </p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> <!-- end card-box-->
-                                </div> <!-- end col -->
+                                    </div> 
+                                </div> <!-- end Front end projects -->
 
                                 <div class="col-md-4">
                                     <div class="card-box bg-pattern">
@@ -78,13 +89,24 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="text-right">
-                                                    <h3 class="text-dark my-1"><span data-plugin="counterup">741</span></h3>
-                                                    <p class="text-muted mb-0 text-truncate">Won Deals</p>
+                                                    <?php
+                                                        //count Number of backend projects
+                                                        $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'BackEnd WebApp' ";
+                                                        $stmt = $mysqli->prepare($result);
+                                                        //$stmt->bind_param('i', $user_id);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($back_end);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                    ?>
+                                                    <h3 class="text-dark my-1"><span data-plugin="counterup"><?php echo $back_end;?></span></h3>
+                                                    <p class="text-muted mb-0 text-truncate">BackEnd Projects</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> <!-- end card-box-->
-                                </div> <!-- end col -->
+                                </div> <!-- end back end projects -->
+
                                 <div class="col-md-4">
                                     <div class="card-box bg-pattern">
                                         <div class="row">
@@ -95,13 +117,108 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="text-right">
-                                                    <h3 class="text-dark my-1"><span data-plugin="counterup">256</span></h3>
-                                                    <p class="text-muted mb-0 text-truncate">Lost Deals</p>
+                                                    <?php
+                                                        //count Number of fullstack apps
+                                                        $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'FullStack WebApp' OR project_category ='Framework WebApp' ";
+                                                        $stmt = $mysqli->prepare($result);
+                                                        //$stmt->bind_param('i', $user_id);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($fullstack_apps);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                    ?>
+                                                    <h3 class="text-dark my-1"><span data-plugin="counterup"><?php echo $fullstack_apps;?></span></h3>
+                                                    <p class="text-muted mb-0 text-truncate">Fullstack Projects</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> <!-- end card-box-->
-                                </div> <!-- end col -->
+                                </div> <!-- end fullstack projects -->
+
+                                <div class="col-md-4">
+                                    <div class="card-box bg-pattern">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-md bg-danger rounded">
+                                                    <i class="fe-delete avatar-title font-22 text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-right">
+                                                    <?php
+                                                        //count Number of native apps
+                                                        $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'Android App' OR project_category ='Ios App' ";
+                                                        $stmt = $mysqli->prepare($result);
+                                                        //$stmt->bind_param('i', $user_id);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($native_app);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                    ?>
+                                                    <h3 class="text-dark my-1"><span data-plugin="counterup"><?php echo $native_app;?></span></h3>
+                                                    <p class="text-muted mb-0 text-truncate">Native  Apps Projects</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end card-box-->
+                                </div> <!-- end native app projects -->
+
+                                <div class="col-md-4">
+                                    <div class="card-box bg-pattern">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-md bg-danger rounded">
+                                                    <i class="fe-delete avatar-title font-22 text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-right">
+                                                    <?php
+                                                        //count Number of pwe
+                                                        $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'Progressive WebApp' ";
+                                                        $stmt = $mysqli->prepare($result);
+                                                        //$stmt->bind_param('i', $user_id);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($pwe);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                    ?>
+                                                    <h3 class="text-dark my-1"><span data-plugin="counterup"><?php echo $pwe;?></span></h3>
+                                                    <p class="text-muted mb-0 text-truncate">PWE Projects</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end card-box-->
+                                </div> <!-- end PWE projects -->
+
+                                <div class="col-md-4">
+                                    <div class="card-box bg-pattern">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-md bg-danger rounded">
+                                                    <i class="fe-delete avatar-title font-22 text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-right">
+                                                    <?php
+                                                        //count Number of Misc Projects
+                                                        $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'Misc Coding Projects'  OR  project_category ='PDF Cheat Sheets' ";
+                                                        $stmt = $mysqli->prepare($result);
+                                                        //$stmt->bind_param('i', $user_id);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($misc);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                    ?>
+                                                    <h3 class="text-dark my-1"><span data-plugin="counterup"><?php echo $misc;?></span></h3>
+                                                    <p class="text-muted mb-0 text-truncate">Misc Projects</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end card-box-->
+                                </div> <!-- end misc projects -->
+
                             </div>
                             <!-- end row-->
 
@@ -115,10 +232,11 @@
                                                 <a data-toggle="collapse" href="#cardCollpase1" role="button" aria-expanded="false" aria-controls="cardCollpase1"><i class="mdi mdi-minus"></i></a>
                                                 <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                                             </div>
-                                            <h4 class="header-title mb-0">Deals Analytics</h4>
+                                            <h4 class="header-title mb-0">My Commits To Devlan Per Project Category</h4>
 
                                             <div id="cardCollpase1" class="collapse pt-3 show">
-                                                <div id="deals-analytics" style="height: 350px;" class="morris-chart"></div>
+                                            <!--Donought chart to show how my commit trend is-->
+                                                <div id="loggedInUserCommits" style="height: 350px;" class="morris-chart"></div>
                                             </div>
                                         </div>
                                     </div> <!-- end card-->
@@ -132,10 +250,11 @@
                                                 <a data-toggle="collapse" href="#cardCollpase2" role="button" aria-expanded="false" aria-controls="cardCollpase2"><i class="mdi mdi-minus"></i></a>
                                                 <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                                             </div>
-                                            <h4 class="header-title mb-0">Average Time for Deal</h4>
+                                            <h4 class="header-title mb-0">Total Commits Per Project Category</h4>
 
                                             <div id="cardCollpase2" class="collapse pt-3 show">
-                                                <div id="morris-bar-example" style="height: 350px;" class="morris-chart"></div>
+                                            <!--Pie Chart to indicate how me and other fellow devlans are contributing-->
+                                                <div id="TotalDevLannersCommits" style="height: 350px;" class="morris-chart"></div>
 
                                             </div>
                                         </div>
@@ -144,183 +263,6 @@
                             </div>
                             <!-- end row-->
 
-
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="card-widgets">
-                                                <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
-                                                <a data-toggle="collapse" href="#cardCollpase3" role="button" aria-expanded="false" aria-controls="cardCollpase3"><i class="mdi mdi-minus"></i></a>
-                                                <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
-                                            </div>
-                                            <h4 class="header-title mb-0">Recent Contacts</h4>
-
-                                            <div id="cardCollpase3" class="collapse pt-3 show">
-                                                <div class="table-responsive">
-                                                    <table class="table table-centered table-hover mb-0">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Basic Info</th>
-                                                                <th>Phone</th>
-                                                                <th>Email</th>
-                                                                <th>Company</th>
-                                                                <th>Created Date</th>
-                                                                <th style="width: 82px;">Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="table-user">
-                                                                    <img src="assets/images/users/user-4.jpg" alt="table-user" class="mr-2 rounded-circle">
-                                                                    <a href="javascript:void(0);" class="text-body font-weight-semibold">Paul J. Friend</a>
-                                                                </td>
-                                                                <td>
-                                                                    937-330-1634
-                                                                </td>
-                                                                <td>
-                                                                    pauljfrnd@jourrapide.com
-                                                                </td>
-                                                                <td>
-                                                                    Vine Corporation
-                                                                </td>
-                                                                <td>
-                                                                    07/07/2018
-                                                                </td>
-                                                                <td>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            <tr>
-                                                                <td class="table-user">
-                                                                    <img src="assets/images/users/user-3.jpg" alt="table-user" class="mr-2 rounded-circle">
-                                                                    <a href="javascript:void(0);" class="text-body font-weight-semibold">Bryan J. Luellen</a>
-                                                                </td>
-                                                                <td>
-                                                                    215-302-3376
-                                                                </td>
-                                                                <td>
-                                                                    bryuellen@dayrep.com
-                                                                </td>
-                                                                <td>
-                                                                    Blue Motors
-                                                                </td>
-                                                                <td>
-                                                                    09/12/2018
-                                                                </td>
-                                                                <td>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td class="table-user">
-                                                                    <img src="assets/images/users/user-3.jpg" alt="table-user" class="mr-2 rounded-circle">
-                                                                    <a href="javascript:void(0);" class="text-body font-weight-semibold">Kathryn S. Collier</a>
-                                                                </td>
-                                                                <td>
-                                                                    828-216-2190
-                                                                </td>
-                                                                <td>
-                                                                    collier@jourrapide.com
-                                                                </td>
-                                                                <td>
-                                                                    Arcanetworks
-                                                                </td>
-                                                                <td>
-                                                                    06/30/2018
-                                                                </td>
-                                                                <td>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td class="table-user">
-                                                                    <img src="assets/images/users/user-1.jpg" alt="table-user" class="mr-2 rounded-circle">
-                                                                    <a href="javascript:void(0);" class="text-body font-weight-semibold">Timothy Kauper</a>
-                                                                </td>
-                                                                <td>
-                                                                    (216) 75 612 706
-                                                                </td>
-                                                                <td>
-                                                                    thykauper@rhyta.com
-                                                                </td>
-                                                                <td>
-                                                                    Boar Records
-                                                                </td>
-                                                                <td>
-                                                                    09/08/2018
-                                                                </td>
-                                                                <td>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td class="table-user">
-                                                                    <img src="assets/images/users/user-5.jpg" alt="table-user" class="mr-2 rounded-circle">
-                                                                    <a href="javascript:void(0);" class="text-body font-weight-semibold">Zara Raws</a>
-                                                                </td>
-                                                                <td>
-                                                                    (02) 75 150 655
-                                                                </td>
-                                                                <td>
-                                                                    austin@dayrep.com
-                                                                </td>
-                                                                <td>
-                                                                    Bearings
-                                                                </td>
-                                                                <td>
-                                                                    07/15/2018
-                                                                </td>
-                                                                <td>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                                </td>
-                                                            </tr>
-
-                                                            
-                                                        </tbody>
-                                                    </table>
-                                                </div> <!-- end table-responsive-->
-
-                                            </div> <!-- end .collapse-->
-                                        </div> <!-- end card-body-->
-                                    </div> <!-- end card-->
-                                </div> <!-- end col-->
-
-                                <div class="col-lg-4">
-                                    <div class="card">
-                                        <div class="card-body" dir="ltr">
-                                            <div class="card-widgets">
-                                                <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
-                                                <a data-toggle="collapse" href="#cardCollpase4" role="button" aria-expanded="false" aria-controls="cardCollpase4"><i class="mdi mdi-minus"></i></a>
-                                                <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
-                                            </div>
-                                            <h4 class="header-title mb-0">Sales by Product Group</h4>
-
-                                            <div id="cardCollpase4" class="collapse pt-3 show">
-                                                <div id="morris-donut-example" style="height: 310px;" class="morris-chart"></div>
-                                                <div class="text-center">
-                                                    <p class="text-muted font-15 font-family-secondary mb-0">
-                                                        <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-info"></i> Group 1</span>
-                                                        <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i> Group 2</span>
-                                                        <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-light"></i> Group 3</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end card-->
-                                </div> <!-- end col-->
-                            </div>
-                            <!-- end row-->
-                            
                         </div> <!-- container -->
 
                     </div> <!-- content -->
@@ -342,7 +284,267 @@
             
             <!-- Right bar overlay-->
             <div class="rightbar-overlay"></div>
+            
+            <!--HardWire chart JS Directly-->
+            <script>
+                window.onload = function () {
 
+                var chart1 = new CanvasJS.Chart("loggedInUserCommits", {
+                    theme: "light",
+                //  exportFileName: "Doughnut Chart",
+                // exportEnabled: true,
+                    animationEnabled: true,
+                    title:{
+                    text: ""
+                    },
+                    legend:{
+                    cursor: "pointer",
+                    itemclick: explodePie
+                    },
+                    data: [{
+                    type: "doughnut",
+                    innerRadius: 90,
+                    showInLegend: true,
+                    toolTipContent: "<b>{name}</b>: {y} (#percent%)",
+                    indexLabel: "{name} - #percent%",
+                    dataPoints: [
+                        { 
+                        y:
+                            <?php
+                                //count Number of front end projects
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE user_id = ? AND  project_category = 'FrontEnd WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_front_end);
+                                $stmt->fetch();
+                                $stmt->close();
+
+                                echo $dchart_front_end; //display
+                            ?> , name: "FrontEnd Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of backend projects
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE user_id = ? AND  project_category = 'BackEnd WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_back_end);
+                                $stmt->fetch();
+                                $stmt->close();
+
+                                echo $dchart_back_end;
+                            ?> , name: "BackEnd Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of fullstack apps
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE  user_id = ? AND project_category = 'FullStack WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_fullstack_apps);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $dchart_fullstack_apps;
+
+                            ?> , name: "Fullstack Projects" },
+
+                            { y:
+                            <?php
+                                //count Number of framework  apps
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE  user_id = ? AND project_category ='Framework WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_frameworks_apps);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $dchart_frameworks_apps;
+
+                            ?> , name: "Framework Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of native apps
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE user_id = ? AND  project_category = 'Android App' OR project_category ='Ios App' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_native_app);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $dchart_native_app;
+                            ?>, name: "Native Projects" },
+
+                        { y: 
+                            <?php
+                                //count Number of pwe
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE   user_id = ? AND project_category = 'Progressive WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_pwe);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $dchart_pwe;
+
+                            ?> , name: "PWA Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of Misc Projects
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE  user_id = ? AND  project_category = 'Misc Coding Projects' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_misc);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $dchart_misc;
+
+                            ?>, name: "Misc Projects"},
+
+                        { y:
+                            <?php
+                                //count Number of PDF CheatShets Projects
+                                $user_id = $_SESSION['user_id'];
+                                $result ="SELECT count(*)  FROM  projects WHERE  user_id = ? AND    project_category ='PDF Cheat Sheets' ";
+                                $stmt = $mysqli->prepare($result);
+                                $stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($dchart_cheatsheets);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $dchart_cheatsheets;
+
+                            ?>, name: "CheatSheets"}    
+
+                    ]
+                    }]
+                });
+
+                var chart2 = new CanvasJS.Chart("TotalDevLannersCommits", {
+                    animationEnabled: true,
+                    title: {
+                    text: ""
+                    },
+                    data: [{
+                    type: "pie",
+                    startAngle: 240,
+                    yValueFormatString: "##0.00'%'",
+                    indexLabel: "{label} {y}",
+                    dataPoints: [
+                        { 
+                        y:
+                            <?php
+                                //count Number of front end projects
+                                $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'FrontEnd WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                //$stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($front_end);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $front_end;
+
+                            ?> , label: "FrontEnd Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of backend projects
+                                $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'BackEnd WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                //$stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($back_end);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $back_end;
+
+                            ?> , label: "BackEnd Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of fullstack apps
+                                $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'FullStack WebApp' OR project_category ='Framework WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                //$stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($fullstack_apps);
+                                $stmt->fetch();
+                                $stmt->close();
+
+                                echo $fullstack_apps
+                            ?> , label: "Fullstack Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of native apps
+                                $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'Android App' OR project_category ='Ios App' ";
+                                $stmt = $mysqli->prepare($result);
+                                //$stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($native_app);
+                                $stmt->fetch();
+                                $stmt->close();
+
+                                echo $native_app;
+                            ?>, label: "Native Projects" },
+
+                        { y: 
+                            <?php
+                                //count Number of pwe
+                                $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'Progressive WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                //$stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($pwe);
+                                $stmt->fetch();
+                                $stmt->close();
+
+                                echo $pwe;
+                            ?> , label: "PWA Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of Misc Projects
+                                $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'Misc Coding Projects'  OR  project_category ='PDF Cheat Sheets' ";
+                                $stmt = $mysqli->prepare($result);
+                                //$stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($misc);
+                                $stmt->fetch();
+                                $stmt->close();
+
+                                echo $misc;
+                            ?>, label: "Misc Projects"}
+
+                    ]
+                    }]
+                });
+                chart1.render();
+                chart2.render();
+
+                function explodePie (e) {
+                    if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+                    e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+                    } else {
+                    e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+                    }
+                    e.chart.render();
+                }
+
+                }
+            </script>
             <!-- Vendor js -->
             <script src="assets/js/vendor.min.js"></script>
 
@@ -355,7 +557,10 @@
 
             <!-- App js -->
             <script src="assets/js/app.min.js"></script>
-            
+
+            <!--CanvasJS-->
+            <script src="assets/js/jquery.canvasjs.min.js"></script>
+
         </body>
 
     </html>
