@@ -14,6 +14,8 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
         <script src="assets/js/swal.js"></script>
+         <!-- Footable css -->
+         <link href="assets/libs/footable/footable.core.min.css" rel="stylesheet" type="text/css" />
         <!--Direct Server side script injection to handle alerts-->
         <!--Inject SWAL-->
         <?php if(isset($success)) {?>

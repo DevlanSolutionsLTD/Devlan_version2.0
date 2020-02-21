@@ -5,6 +5,8 @@
     check_login();
     $user_id = $_SESSION['user_id'];
     //clear notifications
+    //oops dont clear 
+    /*
         if(isset($_GET['clear_notification']))
             {
                 $id=intval($_GET['clear_notification']);
@@ -23,9 +25,9 @@
                         {
                             $err = "Try Again Later";
                         }
-                */
+                
             }
-
+*/
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +52,7 @@
             <!-- ============================================================== -->
             <?php
                 //Use logged in user session['user_id']
-                $user_id = $_SESSION['user_id'];
+                $user_id = $_GET['user_id'];
                 $ret="SELECT  * FROM  users WHERE user_id=?";
                 $stmt= $mysqli->prepare($ret) ;
                 $stmt->bind_param('i',$user_id);
@@ -72,9 +74,12 @@
                                     <div class="page-title-box">
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">DevLan</a></li>
+                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Devlan</a></li>
                                                 <li class="breadcrumb-item"><a href="devlan_pages_dashboard.php">Dashboard</a></li>
-                                                <li class="breadcrumb-item active">Profile</li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_view_my_commits.php">My Commits</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_view_my_commits.php">View</a></li>
+                                                <li class="breadcrumb-item active"><?php echo $row->username;?></li>
+
                                             </ol>
                                         </div>
                                         <h4 class="page-title"><?php echo $row->username?>'s Profile</h4>
@@ -84,7 +89,7 @@
                             <!-- end page title -->
 
                             <div class="row">
-                                <div class="col-lg-4 col-xl-4">
+                                <div class="col-lg-6 col-xl-6">
                                     <div class="card-box text-center">
                                         <img src="assets/img/DevLanners/<?php echo $row->dpic;?>" class="img-thumbnail"  alt="profile-image">
 
@@ -136,20 +141,15 @@
                                     
                                 </div> <!-- end col-->
 
-                                <div class="col-lg-8 col-xl-8">
+                                <div class="col-lg-6 col-xl-6">
                                     <div class="card-box">
                                         <ul class="nav nav-pills navtab-bg nav-justified">
                                             <li class="nav-item">
                                                 <a href="#contribution" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                                                    My Latest Contribution
+                                                    <?php echo $row->username;?> DevLan Commits
                                                 </a>
                                             </li>
                                             
-                                            <li class="nav-item">
-                                                <a href="#notifications" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                                    Notifications
-                                                </a>
-                                            </li>
                                         </ul>
                                         <div class="tab-content">
                                             <div class="tab-pane active" id="contribution">
@@ -162,7 +162,7 @@
                                                     <?php
                                                         //get logged in user commits
                                                         $user_id = $_SESSION['user_id'];
-                                                        $ret="SELECT  * FROM  projects WHERE  user_id = ?  ORDER BY `projects`.`date_created` DESC LIMIT 3 ";
+                                                        $ret="SELECT  * FROM  projects WHERE  user_id = ?  ORDER BY `projects`.`date_created` DESC LIMIT 10 ";
                                                         $stmt= $mysqli->prepare($ret) ;
                                                         $stmt->bind_param('i',$user_id);
                                                         $stmt->execute() ;//ok
@@ -200,46 +200,6 @@
                                                 </ul>
 
                                             </div> <!-- end commit tab-->
-
-                                            <div class="tab-pane " id="notifications">
-
-                                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-bell mr-1"></i>
-                                                    Notifications </h5>
-
-                                                <ul class="list-unstyled timeline-sm">
-                                                    <?php
-                                                        //get logged in user notifications
-                                                        $user_id = $_SESSION['user_id'];
-                                                        $ret="SELECT  * FROM  notifications WHERE  user_id = ? LIMIT 15";
-                                                        $stmt= $mysqli->prepare($ret) ;
-                                                        $stmt->bind_param('i',$user_id);
-                                                        $stmt->execute() ;//ok
-                                                        $res=$stmt->get_result();
-
-                                                        while($row=$res->fetch_object())
-                                                        {
-                                                        //trim timestamps to DD-YY-MMMM
-                                                            $DT = $row->n_tstamp;
-                                                    ?>
-                                                        <li class="timeline-sm-item">
-                                                            <span class="timeline-sm-date"><?php echo date("d-M-Y", strtotime($DT));?></span>
-                                                            <h5 class="mt-0 mb-1"><?php echo $row->n_name;?></h5>
-                                                            <p><?php echo $row->n_from;?></p>
-                                                            <p class="text-muted mt-2">
-                                                                <?php echo $row->n_desc;?>
-                                                            </p>
-
-                                                            <a href="devlan_pages_account.php?clear_notification=<?php echo $row->n_id;?>" class="float-right btn btn-outline-danger"><i class="fa fa-trash"></i> <i class="fa fa-bell"></i> Clear</a><br>
-
-                                                        </li><hr>
-
-                                                    <?php }?>
-                                                </ul>
-
-                                            </div>
-                                            <!-- end notifications content-->
-
-
                                         </div> <!-- end tab-content -->
                                     </div> <!-- end card-box-->
 

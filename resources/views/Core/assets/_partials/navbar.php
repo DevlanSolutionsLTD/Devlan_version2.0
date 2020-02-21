@@ -3,7 +3,7 @@
                 <ul class="list-unstyled topnav-menu float-right mb-0">
 
                     <li class="d-none d-sm-block">
-                        <form class="app-search">
+                        <form action="devlan_pages_advance_search.php" class="app-search">
                             <div class="app-search-box">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search...">
@@ -88,7 +88,7 @@
                 ?>
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="assets/img/DevLanners/<?php echo $row->dpic;?>" alt="user-image" class="rounded-circle">
+                            <img src="assets/img/DevLanners/<?php echo $row->dpic;?>" alt="user-image" class="rounded-circle avatar-lg">
                             <span class="pro-user-name ml-1">
                                 <?php echo $row->username;?> <i class="mdi mdi-chevron-down"></i> 
                             </span>
@@ -159,21 +159,21 @@
         
                     <li class="dropdown d-none d-lg-block">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            Create New
+                            Create 
                             <i class="mdi mdi-chevron-down"></i> 
                         </a>
                         <div class="dropdown-menu">
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
+                            <a href="devlan_pages_new_commit.php" class="dropdown-item">
                                 <i class="fe-briefcase mr-1"></i>
-                                <span>New Project</span>
+                                <span>New Commit</span>
                             </a>
 
                             
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
+                            <a href="https://devlan.martdev.info/f/" target="_blank" class="dropdown-item">
                                 <i class="fe-headphones mr-1"></i>
                                 <span>Devlan Forum</span>
                             </a>

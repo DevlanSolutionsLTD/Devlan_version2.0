@@ -55,8 +55,8 @@
                                     <div class="card-box bg-pattern">
                                         <div class="row">
                                             <div class="col-6">
-                                                <div class="avatar-md bg-blue rounded">
-                                                    <i class="fe-layers avatar-title font-22 text-white"></i>
+                                                <div class="avatar-md bg-success rounded">
+                                                    <i class="fe-chrome  avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -84,7 +84,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="avatar-md bg-success rounded">
-                                                    <i class="fe-award avatar-title font-22 text-white"></i>
+                                                    <i class="fe-cast  avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -111,8 +111,8 @@
                                     <div class="card-box bg-pattern">
                                         <div class="row">
                                             <div class="col-6">
-                                                <div class="avatar-md bg-danger rounded">
-                                                    <i class="fe-delete avatar-title font-22 text-white"></i>
+                                                <div class="avatar-md bg-success rounded">
+                                                    <i class="fe-layers avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -139,8 +139,8 @@
                                     <div class="card-box bg-pattern">
                                         <div class="row">
                                             <div class="col-6">
-                                                <div class="avatar-md bg-danger rounded">
-                                                    <i class="fe-delete avatar-title font-22 text-white"></i>
+                                                <div class="avatar-md bg-success rounded">
+                                                    <i class="fe-monitor avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -167,8 +167,8 @@
                                     <div class="card-box bg-pattern">
                                         <div class="row">
                                             <div class="col-6">
-                                                <div class="avatar-md bg-danger rounded">
-                                                    <i class="fe-delete avatar-title font-22 text-white"></i>
+                                                <div class="avatar-md bg-success rounded">
+                                                    <i class="fe-tablet  avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -195,8 +195,8 @@
                                     <div class="card-box bg-pattern">
                                         <div class="row">
                                             <div class="col-6">
-                                                <div class="avatar-md bg-danger rounded">
-                                                    <i class="fe-delete avatar-title font-22 text-white"></i>
+                                                <div class="avatar-md bg-success rounded">
+                                                    <i class="fe-file-plus  avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
