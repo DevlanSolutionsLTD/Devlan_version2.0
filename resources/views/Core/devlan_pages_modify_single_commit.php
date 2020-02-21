@@ -93,9 +93,9 @@
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">DevLan</a></li>
-                                                <li class="breadcrumb-item"><a href="devlan_pages_dashboard">Dashboard</a></li>
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">My Commits</a></li>
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Manage Commits</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_dashboard.php">Dashboard</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_manage_commits.php">My Commits</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_manage_commits.php">Manage Commits</a></li>
                                                 <li class="breadcrumb-item active"><?php echo $row->project_name;?></li>
                                             </ol>
                                         </div>

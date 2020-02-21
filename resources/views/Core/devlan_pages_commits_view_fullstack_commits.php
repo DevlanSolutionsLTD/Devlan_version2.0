@@ -4,28 +4,6 @@
     include('assets/configs/checklogin.php');
     check_login();
     $user_id = $_SESSION['user_id'];
-    //delete commits
-    if(isset($_GET['delete_commit']))
-    {
-            $id=intval($_GET['delete_commit']);
-            $adn="DELETE FROM projects WHERE project_id=?";
-            $stmt= $mysqli->prepare($adn);
-            $stmt->bind_param('i',$id);
-            $stmt->execute();
-            $stmt->close();	   
-            if($stmt)
-            {
-                $success = "Commit Deleted!";
-            }
-            else
-            {
-                $err = "Please try again later";
-            }
-            
-            
-
-    }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,33 +52,12 @@
                                             <ol class="breadcrumb m-0">
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Devlan</a></li>
                                                 <li class="breadcrumb-item"><a href="devlan_pages_dashboard.php">Dashbaord</a></li>
-                                                <li class="breadcrumb-item"><a href="devlan_pages_manage_commits.php">My Commits</a></li>
-                                                <li class="breadcrumb-item active">Manage Commits</li>
+                                                <li class="breadcrumb-item"><a href="javascript: void(0);">FullStack Commits</a></li>
+                                                <li class="breadcrumb-item active">View Commits</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">@<?php echo $row->username;?>
-                                            <?php
-                                                //invoke a crazy function to make a joke from DevLanner commits
-                                                $user_id = $_SESSION['user_id'];
-                                                $result ="SELECT count(*)  FROM  projects WHERE  user_id = ? ";
-                                                $stmt = $mysqli->prepare($result);
-                                                $stmt->bind_param('i', $user_id);
-                                                $stmt->execute();
-                                                $stmt->bind_result($user_commits);
-                                                $stmt->fetch();
-                                                $stmt->close();
-                                                
-                                                //lets get this shit done
-                                                    if($user_commits == 0 && $user_commits <= 5)
-                                                        {
-                                                            echo "You Are Too Mean...Please Share Something With Us"; 
-                                                        }
-
-                                                    else
-                                                    {
-                                                        echo "Bravo! This Are Your Commits So Far";
-                                                    }
-                                            ?>
+                                        <h4 class="page-title">FullStack Commits
+                                            
                                         </h4>
                                     </div>
                                 </div>
@@ -110,7 +67,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card-box">
-                                        <h4 class="header-title">My Commits</h4>
+                                        <h4 class="header-title">All FullStack Commits</h4>
                                         
 
                                         <div class="mb-2">
@@ -139,17 +96,17 @@
                                                     <th data-toggle="true">Commit Name</th>
                                                     <th>Commit Number</th>
                                                     <th data-hide="phone">Date Commited</th>
-                                                    <th data-hide="phone, tablet">Commit Category</th>
+                                                    <th data-hide="phone, tablet">Commit By</th>
                                                     <th data-hide="phone, tablet">Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                     <?php
-                                                            //get logged in user commits
-                                                            $user_id = $_SESSION['user_id'];
-                                                            $ret="SELECT  * FROM  projects WHERE  user_id = ?  ORDER BY `projects`.`date_created` DESC LIMIT 15 ";
+                                                            //get all commits by commit category = front end
+                                                            //$user_id = $_SESSION['user_id'];
+                                                            $ret="SELECT  * FROM  projects WHERE  project_category = 'FullStack WebApp' ";
                                                             $stmt= $mysqli->prepare($ret) ;
-                                                            $stmt->bind_param('i',$user_id);
+                                                            //$stmt->bind_param('i',$user_id);
                                                             $stmt->execute() ;//ok
                                                             $res=$stmt->get_result();
 
@@ -161,22 +118,15 @@
                                                         <tr>
                                                             <td><?php echo $row->project_name;?></td>
                                                             <td><?php echo $row->project_number;?></td>
-                                                            <td><?php echo date("d-M-Y", strtotime($DT));?></td>
-                                                            <td><?php echo $row->project_category;?></td>
+                                                            <td><?php echo date("d-M-Y h:m:s", strtotime($DT));?></td>
+                                                            <td><?php echo $row->user_email;?></td>
                                                             <td>
-                                                                <a href="devlan_pages_modify_single_commit.php?project_id=<?php echo $row->project_id;?>">
+                                                                <a href="devlan_pages_view_single_commit.php?project_id=<?php echo $row->project_id;?>">
                                                                     <span class="btn label-table btn-outline-success btn-sm">
-                                                                        <i class="fa fa-edit"></i> <i class="mdi mdi-source-pull mr-1"></i>
-                                                                            Modify Commit
+                                                                        <i class="fa fa-eye"></i> <i class="mdi mdi-source-pull mr-1"></i>
+                                                                            View
                                                                     </span>
-                                                                </a> 
-
-                                                                <a href="devlan_pages_manage_commits.php?delete_commit=<?php echo $row->project_id;?>">
-                                                                    <span class="btn label-table btn-outline-danger btn-sm">
-                                                                        <i class="fa fa-trash"></i> <i class="mdi mdi-source-pull mr-1"></i>
-                                                                            Delete Commit
-                                                                    </span>
-                                                                </a>   
+                                                                </a>    
                                                             </td>
                                                         </tr>
 

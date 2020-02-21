@@ -43,7 +43,7 @@
                                                 <li class="breadcrumb-item active">Dashboard</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Software Development X Coding Projects Dashboard</h4>
+                                        <h4 class="page-title">Software Development X Coding Commits Dashboard</h4>
                                     </div>
                                 </div>
                             </div>     
@@ -72,7 +72,7 @@
                                                         $stmt->close();
                                                     ?>
                                                     <h3 class="text-dark my-1"><span data-plugin="counterup"><?php echo $front_end;?></span></h3>
-                                                    <p class="text-muted mb-0 text-truncate">FrondEnd Projects </p>
+                                                    <p class="text-muted mb-0 text-truncate">FrontEnd Projects </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -471,6 +471,21 @@
                                 echo $back_end;
 
                             ?> , label: "BackEnd Projects" },
+
+                        { y:
+                            <?php
+                                //count Number of framework powered
+                                $result ="SELECT count(*)  FROM  projects WHERE  project_category = 'Framework WebApp' ";
+                                $stmt = $mysqli->prepare($result);
+                                //$stmt->bind_param('i', $user_id);
+                                $stmt->execute();
+                                $stmt->bind_result($frame_works);
+                                $stmt->fetch();
+                                $stmt->close();
+                                echo $frame_works;
+
+                            ?> , label: "Framework Projects" },    
+
 
                         { y:
                             <?php

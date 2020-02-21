@@ -53,18 +53,18 @@
                     //trim timestamps to DD-YY-MMMM
                     $DT = $row->date_created;
 
-                    //display a default image if project has no screenshot
-                    if ($row->project_avatar == '')
-                    {
-                        
-                        $img = " <img class='img-fluid' src = 'assets/img/logo-xx.png'></img> ";
-
-
-                    }
-                    else
-                    {
-                        $img = " <img class='img-fluid' src = 'assets/projects/$row->project_avatar'></img> ";
-                    }
+                     //display a default image if project has no screenshot
+                     if ($row->project_avatar == '')
+                     {
+                         
+                         $img = " <img class='img-fluid' src = 'assets/img/logo-xx.png'></img> ";
+ 
+ 
+                     }
+                     else
+                     {
+                         $img = " <img class='img-fluid' src = 'assets/projects/$row->project_avatar'></img> ";
+                     }
                     
             ?>
                 <div class="content-page">
@@ -86,7 +86,7 @@
                                                 <li class="breadcrumb-item active"><?php echo $row->project_name;?></li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title"><?php echo $row->project_number;?></h4>
+                                        <h4 class="page-title"><?php echo $row->project_name;?></h4>
                                     </div>
                                 </div>
                             </div>     
@@ -95,7 +95,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="card-box">
-                                        <h4 class="header-title mb-4"><?php echo $row->project_name;?></h4>
+                                        <h4 class="header-title mb-4"><?php echo $row->project_number;?></h4>
             
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">
@@ -113,9 +113,16 @@
                                         <div class="tab-content">
 
                                             <div class="tab-pane show active" id="screenshot">
-                                                    <?php echo $img ;?>
+                                                <?php echo $img ;?>
                                             </div>
+                                            
                                             <div class="tab-pane " id="details">
+                                                <div class="card" style="width: 18rem;">
+                                                    <div class="card-body">
+                                                        <embed src="assets/projects/<?php echo $row->project_files;?>" width="900" height="500"  type="application/pdf">
+                                                    </div>
+                                                </div>
+                                            <hr>
                                                 <?php echo $row->project_desc;?>
                                                 <hr>
                                                 <b>Commit By: <?php echo $row->user_email;?></b><br>
@@ -131,7 +138,7 @@
                                                 <hr>
  
                                                 <?php 
-                                                //MEHN I DONT HAVE ANY FREAKING IDEA WHAT I DID HERE 
+                                                //MEHN I DONT HAVE ANY FREAKING IDEA WHAT I DID HERE BUT IT WORKED
                                                     if($row->project_files != '' )
                                                     {
                                                             echo "

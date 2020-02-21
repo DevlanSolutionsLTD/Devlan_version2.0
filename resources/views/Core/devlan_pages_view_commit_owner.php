@@ -161,7 +161,7 @@
                                                 <ul class="list-unstyled timeline-sm">
                                                     <?php
                                                         //get logged in user commits
-                                                        $user_id = $_SESSION['user_id'];
+                                                        $user_id = $_GET['user_id'];
                                                         $ret="SELECT  * FROM  projects WHERE  user_id = ?  ORDER BY `projects`.`date_created` DESC LIMIT 10 ";
                                                         $stmt= $mysqli->prepare($ret) ;
                                                         $stmt->bind_param('i',$user_id);
