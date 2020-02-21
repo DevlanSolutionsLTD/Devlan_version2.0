@@ -93,8 +93,8 @@
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">DevLan</a></li>
-                                                <li class="breadcrumb-item"><a href="devlan_pages_dashboard">Dashboard</a></li>
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">My Commits</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_dashboard.php">Dashboard</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_manage_commits.php">My Commits</a></li>
                                                 <li class="breadcrumb-item active">New Commit</li>
                                             </ol>
                                         </div>
@@ -132,7 +132,6 @@
                                                                     <option>FullStack WebApp</option>
                                                                     <option>Android App</option>
                                                                     <option>Framework WebApp</option>
-                                                                    <option>Non Framework WebApp</option>
                                                                     <option>Progressive WebApp</option>
                                                                     <option>Misc Coding Projects</option>
                                                                     <option>PDF Cheat Sheets</option>

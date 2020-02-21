@@ -72,9 +72,7 @@
                       <li>
                           <a href="devlan_pages_commits_view_frontend_commits.php">View Commit</a>
                       </li>
-                      <li>
-                          <a href="devlan_pages_commits_manage_frontend_commits.php">Manage Commit</a>
-                      </li>
+                      
                       
                   </ul>
               </li>
@@ -91,9 +89,7 @@
                       <li>
                           <a href="devlan_pages_commits_view_backend_commits.php">View Commit</a>
                       </li>
-                      <li>
-                          <a href="devlan_pages_commits_manage_backend_commits.php">Manage Commit</a>
-                      </li>
+                      
                       
                   </ul>
               </li>
@@ -109,12 +105,25 @@
                       <li>
                           <a href="devlan_pages_commits_view_fullstack_commits.php">View Commit</a>
                       </li>
-                      <li>
-                          <a href="devlan_pages_commits_manage_fullstack_commits.php">Manage Commit</a>
-                      </li>
-                      
+                                            
                   </ul>
               </li>
+
+              <li>
+                  <a href="javascript: void(0);">
+                      <i class="fe-cpu"></i>
+                      <span> Framewoks </span>
+                      <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="nav-second-level" aria-expanded="false">
+
+                      <li>
+                          <a href="devlan_pages_commits_view_framework_commits.php">View Commit</a>
+                      </li>
+                                            
+                  </ul>
+              </li>
+
   
               <li>
                   <a href="javascript: void(0);">
@@ -127,10 +136,7 @@
                       <li>
                           <a href="devlan_pages_commits_view_nativeapps_commits.php">View Commit</a>
                       </li>
-                      <li>
-                          <a href="devlan_pages_commits_manage_nativeapps_commits.php">Manage Commit</a>
-                      </li>
-                      
+                                            
                   </ul>
               </li>
 
@@ -145,10 +151,7 @@
                       <li>
                           <a href="devlan_pages_commits_view_pwe_commits.php">View Commit</a>
                       </li>
-                      <li>
-                          <a href="devlan_pages_commits_manage_pwe_commits.php">Manage Commit</a>
-                      </li>
-                      
+                                            
                   </ul>
               </li>
 
@@ -162,9 +165,6 @@
 
                       <li>
                           <a href="devlan_pages_commits_view_cheatsheets_commits.php">View Commit</a>
-                      </li>
-                      <li>
-                          <a href="devlan_pages_commits_manage_cheatsheets_commits.php">Manage Commit</a>
                       </li>
                       
                   </ul>
@@ -180,9 +180,6 @@
 
                       <li>
                           <a href="devlan_pages_commits_view_misc_commits.php">View Commit</a>
-                      </li>
-                      <li>
-                          <a href="devlan_pages_commits_manage_misc_commits.php">Manage Commit</a>
                       </li>
                       
                   </ul>
