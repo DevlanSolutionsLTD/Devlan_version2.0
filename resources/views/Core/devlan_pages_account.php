@@ -109,7 +109,13 @@
 
                                             <p class="text-muted mb-1 font-13"><strong>Residency :</strong> <span class="ml-2"><?php echo $row->location;?></span></p>
 
-                                            <p class="text-muted mb-1 font-13"><strong>WebSite :</strong> <span class="ml-2"><?php echo $row->website;?></span></p>
+                                            <p class="text-muted mb-1 font-13"><strong>WebSite :</strong> <span class="ml-2">
+                                                <a target = "_blank" href="<?php echo $row->website;?>">
+                                                    <?php echo $row->website;?></span>
+                                                </a>
+                                            </p>
+                                                
+
                                         </div>
                                         <hr>
                                         <ul class="social-list list-inline mt-3 mb-0">
@@ -162,7 +168,7 @@
                                                     <?php
                                                         //get logged in user commits
                                                         $user_id = $_SESSION['user_id'];
-                                                        $ret="SELECT  * FROM  projects WHERE  user_id = ?  ORDER BY `projects`.`date_created` DESC LIMIT 3 ";
+                                                        $ret="SELECT  * FROM  projects WHERE  user_id = ?  ORDER BY `projects`.`date_created` DESC LIMIT 30 ";
                                                         $stmt= $mysqli->prepare($ret) ;
                                                         $stmt->bind_param('i',$user_id);
                                                         $stmt->execute() ;//ok

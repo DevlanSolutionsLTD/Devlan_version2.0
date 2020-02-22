@@ -63,7 +63,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-briefcase"></i>
+                      <i class="fe-chrome"></i>
                       <span> FrontEnd  </span>
                       <span class="menu-arrow"></span>
                   </a>
@@ -79,7 +79,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-layers"></i>
+                      <i class="fe-cast"></i>
                       <span> BackEnd  </span>
                       <span class="menu-arrow"></span>
 
@@ -96,7 +96,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-cpu"></i>
+                      <i class="fe-layers"></i>
                       <span> FullStack </span>
                       <span class="menu-arrow"></span>
                   </a>
@@ -127,7 +127,7 @@
   
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-bookmark"></i>
+                      <i class="fe-monitor"></i>
                       <span> NativeApps </span>
                       <span class="menu-arrow"></span>
                   </a>
@@ -142,7 +142,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-grid"></i>
+                      <i class="fe-tablet"></i>
                       <span> PWE </span>
                       <span class="menu-arrow"></span>
                   </a>
@@ -172,7 +172,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-bar-chart-2"></i>
+                      <i class="fe-file-plus"></i>
                       <span> Misc </span>
                       <span class="menu-arrow"></span>
                   </a>
