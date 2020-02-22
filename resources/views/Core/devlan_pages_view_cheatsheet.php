@@ -57,7 +57,7 @@
                      if ($row->project_avatar == '')
                      {
                          
-                         $img = " <img class='img-fluid' src = 'assets/img/logo-xx.png'></img> ";
+                         $img = " <img class='img-fluid' src = 'assets/img/No_project_screenshot.png'></img> ";
  
  
                      }
