@@ -61,6 +61,24 @@
 
                 while($row=$res->fetch_object())
                 {
+                    //display user image or default picture
+                        if($row->user_dpic == '')
+                        {
+                            //Display default image
+                            $profile_picture = 
+                                                "
+                                                <img src='assets/img/DevLanners/no_Profile.png' class='img-thumbnail'  alt='profile-image'>
+
+                                                ";
+                        }
+                        else
+                        {
+                            $profile_picture = 
+                                                "
+                                                    <img src='assets/img/DevLanners/<?php echo $row->dpic' class='img-thumbnail'  alt='profile-image'>
+
+                                                ";
+                        }
             ?>
                 <div class="content-page">
                     <div class="content">
@@ -91,7 +109,10 @@
                             <div class="row">
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="card-box text-center">
-                                        <img src="assets/img/DevLanners/<?php echo $row->dpic;?>" class="img-thumbnail"  alt="profile-image">
+                                            <?php //Display Profile Picture 
+                                                echo $profile_picture 
+                                                
+                                            ;?>
 
                                         <h4 class="mb-0"><?php echo $row->username;?></h4>
                                         <hr>
