@@ -15,7 +15,7 @@
                                 
                                 <div class="text-center w-75 m-auto">
                                     <a href="">
-                                    <span><img src="assets/img/logo-white-xx.png" alt="Devlan Logo" height="60"></span>
+                                    <span><img src="assets/img/devlan-logo.png" alt="Devlan Logo" height="80"></span>
                                     </a>
                                 </div>
 

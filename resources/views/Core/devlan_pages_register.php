@@ -46,7 +46,7 @@
                                 
                                 <div class="text-center w-75 m-auto">
                                     <a href="javascript: void(0);">
-                                        <span><img src="assets/img/logo-white-xx.png" alt="Devlan Logo" height="60"></span>
+                                        <span><img src="assets/img/devlan-logo.png" alt="Devlan Logo" height="80"></span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Create an account with us</p>
                                 </div>
