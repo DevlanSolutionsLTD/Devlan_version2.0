@@ -67,7 +67,7 @@
                             //Display default image
                             $profile_picture = 
                                                 "
-                                                <img src='assets/img/DevLanners/no_Profile.png' class='img-thumbnail'  alt='profile-image'>
+                                                <img src='assets/img/DevLanners/no_profile_picture.png' class='img-thumbnail'  alt='profile-image'>
 
                                                 ";
                         }
