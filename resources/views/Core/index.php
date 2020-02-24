@@ -53,7 +53,7 @@
                                     <p class="text-muted mb-4 mt-3">Enter your email address and password to access your dashboard.</p>
                                 </div>
 
-                                <form method ="post" >
+                                <form method ="post"   >
 
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Email address</label>
@@ -81,6 +81,7 @@
                                 <div class="text-center">
                                     <h5 class="mt-3 text-muted">Sign in with</h5>
                                     <ul class="social-list list-inline mt-3 mb-0">
+                                    <!-- First we have implemented github
                                         <li class="list-inline-item">
                                             <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
                                         </li>
@@ -90,8 +91,9 @@
                                         <li class="list-inline-item">
                                             <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
                                         </li>
+                                        -->
                                         <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
+                                            <a href="GitAuth/" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
                                         </li>
                                     </ul>
                                 </div>

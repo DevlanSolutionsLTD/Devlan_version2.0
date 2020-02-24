@@ -90,7 +90,7 @@
                                     </div>
 
                                 </form>
-
+                                <!--Implemented in Login only
                                 <div class="text-center">
                                     <h5 class="mt-3 text-muted">Sign up with</h5>
                                     <ul class="social-list list-inline mt-3 mb-0">
@@ -109,6 +109,7 @@
                                         
                                     </ul>
                                 </div>
+                                -->
 
                             </div> <!-- end card-body -->
                         </div>
