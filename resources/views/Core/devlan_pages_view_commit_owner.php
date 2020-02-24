@@ -62,7 +62,7 @@
                 while($row=$res->fetch_object())
                 {
                     //display user image or default picture
-                        if($row->user_dpic == '')
+                        if($row->dpic == '')
                         {
                             //Display default image
                             $profile_picture = 
@@ -75,7 +75,7 @@
                         {
                             $profile_picture = 
                                                 "
-                                                    <img src='assets/img/DevLanners/<?php echo $row->dpic' class='img-thumbnail'  alt='profile-image'>
+                                                    <img src='assets/img/DevLanners/$row->dpic' class='img-thumbnail'  alt='profile-image'>
 
                                                 ";
                         }
@@ -109,6 +109,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="card-box text-center">
+
                                             <?php //Display Profile Picture 
                                                 echo $profile_picture 
                                                 
