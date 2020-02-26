@@ -56,7 +56,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="avatar-md bg-success rounded">
-                                                    <i class="fe-chrome  avatar-title font-22 text-white"></i>
+                                                    <i class="fas fa-project-diagram  avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -84,7 +84,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="avatar-md bg-success rounded">
-                                                    <i class="fe-cast  avatar-title font-22 text-white"></i>
+                                                    <i class="fas fa-signal  avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -112,7 +112,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="avatar-md bg-success rounded">
-                                                    <i class="fe-layers avatar-title font-22 text-white"></i>
+                                                    <i class="fa fa-file-signature avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -140,7 +140,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="avatar-md bg-success rounded">
-                                                    <i class="fe-monitor avatar-title font-22 text-white"></i>
+                                                    <i class="fa fa-random avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -168,7 +168,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="avatar-md bg-success rounded">
-                                                    <i class="fe-tablet  avatar-title font-22 text-white"></i>
+                                                    <i class="fas fa-scroll  avatar-title font-22 text-white"></i>
                                                 </div>
                                             </div>
                                             <div class="col-6">
