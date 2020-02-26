@@ -80,7 +80,7 @@
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Devlan</a></li>
-                                                <li class="breadcrumb-item"><a href="devlan_pages_dashboard.php">Dashboard</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_nw_commits_dashboard.php">Dashboard</a></li>
                                                 <li class="breadcrumb-item"><a href="devlan_pages_view_my_commits.php">My Commits</a></li>
                                                 <li class="breadcrumb-item"><a href="devlan_pages_view_my_commits.php">View</a></li>
                                                 <li class="breadcrumb-item active"><?php echo $row->project_name;?></li>

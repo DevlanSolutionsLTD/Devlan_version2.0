@@ -9,7 +9,7 @@
 
                 <li>
                     <a href="javascript: void(0);">
-                        <i class="fe-airplay"></i>
+                        <i class="fas fa-digital-tachograph"></i>
                         <span class="badge badge-success badge-pill float-right">2</span>
                         <span> Dashboards </span>
                     </a>
@@ -22,7 +22,8 @@
                         </li>
                         <!--
                             We tryna keep on ading more dashboards as the commits types
-                            keeps on increasing,
+                            keeps on increasing, so for now just calm the fuck up and enjoy the available 
+                            dashboard
                         <li>
                             <a href="dashboard-3.html">Dashboard 3</a>
                         </li>
@@ -34,7 +35,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-user"></i>
+                      <i class="fas fa-user-astronaut"></i>
                       <span> Devlan Account </span>
                       <span class="menu-arrow"></span>
                   </a>
@@ -79,8 +80,8 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-chrome"></i>
-                      <span> PackeTracer  </span>
+                      <i class="fas fa-project-diagram"></i>
+                      <span> PacketTracer  </span>
                       <span class="menu-arrow"></span>
                   </a>
                   <ul class="nav-second-level" aria-expanded="false">
@@ -95,7 +96,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-cast"></i>
+                      <i class="fa fa-file-signature"></i>
                       <span> N/w Scripts  </span>
                       <span class="menu-arrow"></span>
 
@@ -112,7 +113,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-layers"></i>
+                      <i class="fas fa-signal"></i>
                       <span> GNS3 Commits </span>
                       <span class="menu-arrow"></span>
                   </a>
@@ -128,7 +129,7 @@
               
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-map"></i>
+                      <i class="fas fa-scroll"></i>
                       <span> CheatSheets </span>
                       <span class="menu-arrow"></span>
                   </a>
@@ -143,7 +144,7 @@
 
               <li>
                   <a href="javascript: void(0);">
-                      <i class="fe-file-plus"></i>
+                      <i class="fa fa-random"></i>
                       <span> Misc Commits </span>
                       <span class="menu-arrow"></span>
                   </a>
