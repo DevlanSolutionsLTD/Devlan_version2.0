@@ -15,10 +15,10 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="devlan_pages_dashboard.php">Coding Commits </a>
+                            <a href="../devlan_pages_dashboard.php">Coding Commits </a>
                         </li>
                         <li>
-                            <a href="networking/devlan_pages_nw_commits_dashboard.php">Networking Commits</a>
+                            <a href="devlan_pages_nw_commits_dashboard.php">Networking Commits</a>
                         </li>
                         <!--
                             We tryna keep on ading more dashboards as the commits types
@@ -80,13 +80,13 @@
               <li>
                   <a href="javascript: void(0);">
                       <i class="fe-chrome"></i>
-                      <span> FrontEnd  </span>
+                      <span> PackeTracer  </span>
                       <span class="menu-arrow"></span>
                   </a>
                   <ul class="nav-second-level" aria-expanded="false">
 
                       <li>
-                          <a href="devlan_pages_commits_view_frontend_commits.php">View Commit</a>
+                          <a href="devlan_pages_commits_packettracer_commits.php">View Commit</a>
                       </li>
                       
                       
@@ -96,14 +96,14 @@
               <li>
                   <a href="javascript: void(0);">
                       <i class="fe-cast"></i>
-                      <span> BackEnd  </span>
+                      <span> N/w Scripts  </span>
                       <span class="menu-arrow"></span>
 
                   </a>
                   <ul class="nav-second-level" aria-expanded="false">
 
                       <li>
-                          <a href="devlan_pages_commits_view_backend_commits.php">View Commit</a>
+                          <a href="devlan_pages_commits_network_automation_scripts.php">View Commit</a>
                       </li>
                       
                       
@@ -113,64 +113,19 @@
               <li>
                   <a href="javascript: void(0);">
                       <i class="fe-layers"></i>
-                      <span> FullStack </span>
+                      <span> GNS3 Commits </span>
                       <span class="menu-arrow"></span>
                   </a>
                   <ul class="nav-second-level" aria-expanded="false">
 
                       <li>
-                          <a href="devlan_pages_commits_view_fullstack_commits.php">View Commit</a>
+                          <a href="devlan_pages_commits_gns3.php">View Commit</a>
                       </li>
                                             
                   </ul>
               </li>
 
-              <li>
-                  <a href="javascript: void(0);">
-                      <i class="fe-cpu"></i>
-                      <span> Framewoks </span>
-                      <span class="menu-arrow"></span>
-                  </a>
-                  <ul class="nav-second-level" aria-expanded="false">
-
-                      <li>
-                          <a href="devlan_pages_commits_view_framework_commits.php">View Commit</a>
-                      </li>
-                                            
-                  </ul>
-              </li>
-
-  
-              <li>
-                  <a href="javascript: void(0);">
-                      <i class="fe-monitor"></i>
-                      <span> NativeApps </span>
-                      <span class="menu-arrow"></span>
-                  </a>
-                  <ul class="nav-second-level" aria-expanded="false">
-
-                      <li>
-                          <a href="devlan_pages_commits_view_nativeapps_commits.php">View Commit</a>
-                      </li>
-                                            
-                  </ul>
-              </li>
-
-              <li>
-                  <a href="javascript: void(0);">
-                      <i class="fe-tablet"></i>
-                      <span> PWE </span>
-                      <span class="menu-arrow"></span>
-                  </a>
-                  <ul class="nav-second-level" aria-expanded="false">
-
-                      <li>
-                          <a href="devlan_pages_commits_view_pwe_commits.php">View Commit</a>
-                      </li>
-                                            
-                  </ul>
-              </li>
-
+              
               <li>
                   <a href="javascript: void(0);">
                       <i class="fe-map"></i>
@@ -180,7 +135,7 @@
                   <ul class="nav-second-level" aria-expanded="false">
 
                       <li>
-                          <a href="devlan_pages_commits_view_cheatsheets_commits.php">View Commit</a>
+                          <a href="devlan_pages_commits_cheatsheets_commits.php">View Commit</a>
                       </li>
                       
                   </ul>
@@ -189,13 +144,13 @@
               <li>
                   <a href="javascript: void(0);">
                       <i class="fe-file-plus"></i>
-                      <span> Misc </span>
+                      <span> Misc Commits </span>
                       <span class="menu-arrow"></span>
                   </a>
                   <ul class="nav-second-level" aria-expanded="false">
 
                       <li>
-                          <a href="devlan_pages_commits_view_misc_commits.php">View Commit</a>
+                          <a href="devlan_pages_commits_view_networking_misc_commits.php">View Commit</a>
                       </li>
                       
                   </ul>
