@@ -15,29 +15,12 @@
                     while($row=$res->fetch_object())
                     
                 {
-                    //display user image or default picture
-                    if($row->dpic == '')
-                    {
-                        //Display default image
-                        $profile_picture = 
-                                            "
-                                            <img src='../assets/img/DevLanners/no_profile_picture.png' class='rounded-circle avatar-lg'  alt='profile-image'>
-
-                                            ";
-                    }
-                    else
-                    {
-                        $profile_picture = 
-                                            "
-                                                <img src='../assets/img/DevLanners/$row->dpic' class='rounded-circle avatar-lg'  alt='profile-image'>
-
-                                            ";
-                    }
+                                        
                     
                 ?>
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <?php echo $profile_picture;?>
+                        <img src='../assets/img/DevLanners/no_profile_picture.png' class='rounded-circle avatar-lg'  alt='profile-image'>
                             <span class="pro-user-name ml-1">
                                 <?php echo $row->email;?> <i class="mdi mdi-chevron-down"></i> 
                             </span>
@@ -57,7 +40,7 @@
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a href="devlan_sudo_pages_logout.php" class="dropdown-item notify-item">
+                            <a href="devlan_sudo_pages_logout_partial.php" class="dropdown-item notify-item">
                                 <i class="fe-log-out"></i>
                                 <span>Logout</span>
                             </a>

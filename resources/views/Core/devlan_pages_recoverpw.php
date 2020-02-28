@@ -6,12 +6,13 @@
                 
                 $user_email=$_POST['user_email'];
                 $token=$_POST['token'];
+                $dummy_password = $_POST['dummy_password'];
                 
                 //sql to inset the values to the database
-                $query="INSERT INTO password_resets (user_email, token) VALUES (?,?)";
+                $query="INSERT INTO password_resets (user_email, token, dummy_password) VALUES (?,?,?)";
                 $stmt = $mysqli->prepare($query);
                 //bind the submitted values with the matching columns in the database.
-                $rc=$stmt->bind_param('ss', $user_email, $token);
+                $rc=$stmt->bind_param('sss', $user_email, $token, $dummy_password);
                 $stmt->execute();
 
                     if($rc)
@@ -70,6 +71,14 @@
                                             ?>
                                         <input class="form-control" name="token" type="text" value="DevLan_Password_Reset_Token:<?php echo $number;?>" required="" id="password" placeholder="Enter your password">
                                     </div>
+                                    <div class="form-group mb-3" style="display:none"> 
+                                        <label for="password">Password</label>
+                                            <?php 
+                                                $length = 6;    
+                                                $pwd =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
+                                            ?>
+                                        <input class="form-control" name="dummy_password" type="text" value="<?php echo $pwd;?>" required="" id="password" placeholder="Enter your password">
+                                    </div>
 
                                     <div class="form-group mb-0 text-center">
                                         <button  name="devlan_reset_password" class="btn btn-block btn-outline-success" type="submit"> Reset Password </button>
@@ -101,8 +110,8 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p> <a href="index.php" class=" btn btn-outline-success text-white-50 ml-1">Remembered Your Password?</a></p>
-                                <p class="text-white-50">Don't have an account? <a href="devlan_pages_register.php" class="text-white ml-1"><b>Sign Up</b></a></p>
+                                <p> <a href="index.php" class=" btn btn-outline-success  ml-1">Remembered Your Password?</a></p>
+                                <p class="text-white-50">Don't have an account? <a href="devlan_pages_register.php" class="btn btn-outline-success ml-1"><b>Sign Up</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->

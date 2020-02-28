@@ -116,8 +116,8 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p> <a href="devlan_pages_recoverpw.php" class=" btn btn-outline-success text-white-50 ml-1">Forgot your password?</a></p>
-                                <p class="text-white-50">Have an account? <a href="index.php" class="text-white ml-1"><b>Sign In</b></a></p>
+                                <p> <a href="devlan_pages_recoverpw.php" class=" btn btn-outline-danger text-white-50 ml-1">Forgot your password?</a></p>
+                                <p class="text-white-50">Have an account? <a href="index.php" class="btn btn-outline-success ml-1"><b>Sign In</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
