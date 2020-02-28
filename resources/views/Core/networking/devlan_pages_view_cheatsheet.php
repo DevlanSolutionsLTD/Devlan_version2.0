@@ -142,7 +142,7 @@
                                                     if($row->project_files != '' )
                                                     {
                                                             echo "
-                                                                    <a class='btn btn-outline-success'  href='assets/projects/$row->project_files'>
+                                                                    <a class='btn btn-outline-success'  href='../assets/projects/$row->project_files'>
                                                                         <i class='dripicons-cloud-download'></i>
                                                                             Download
                                                                     </a> 

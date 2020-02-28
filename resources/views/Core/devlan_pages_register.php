@@ -64,12 +64,12 @@
 
                                     <div class="form-group mb-3">
                                         <label for="password">Password</label>
-                                        <input class="form-control" name="password" type="password" required="" id="main_password" placeholder="Secure Your Account With A Strong Password">
+                                        <input class="form-control" name="password" type="password" required=""  placeholder="Secure Your Account With A Strong Password">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Confirm Password</label>
-                                        <input class="form-control"  type="password" required="" id="password_conf" placeholder="Confirm Your Password">
+                                        <input class="form-control"  type="password" required="" placeholder="Confirm Your Password">
                                     </div>
 
                                     <div class="form-group mb-3" style="display:none">
@@ -90,10 +90,10 @@
                                     </div>
 
                                 </form>
-                                <!--Implemented in Login only
                                 <div class="text-center">
-                                    <h5 class="mt-3 text-muted">Sign up with</h5>
+                                    <h5 class="mt-3 text-muted">Sign in with</h5>
                                     <ul class="social-list list-inline mt-3 mb-0">
+                                    <!-- First we have implemented github
                                         <li class="list-inline-item">
                                             <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
                                         </li>
@@ -103,13 +103,12 @@
                                         <li class="list-inline-item">
                                             <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
                                         </li>
+                                        -->
                                         <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
+                                            <a href="GitAuth/" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
                                         </li>
-                                        
                                     </ul>
                                 </div>
-                                -->
 
                             </div> <!-- end card-body -->
                         </div>

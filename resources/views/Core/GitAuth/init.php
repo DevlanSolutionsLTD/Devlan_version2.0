@@ -3,7 +3,7 @@
 function goToAuthUrl()
 {
     $client_id = "98ef282c7e7184272406";
-    $redirect_url = "http://exercise.org/callback.php";
+    $redirect_url = "http://devlan.martdev.info/DevLan_Platform/devlan_pages_dashboard.php";
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $url = 'https://github.com/login/oauth/authorize?client_id='. $client_id. "&redirect_url=".$redirect_url."&scope=user";
         header("location: $url");

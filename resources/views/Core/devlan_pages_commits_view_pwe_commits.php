@@ -52,7 +52,7 @@
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Devlan</a></li>
-                                                <li class="breadcrumb-item"><a href="devlan_pages_dashboard.php">Dashbaord</a></li>
+                                                <li class="breadcrumb-item"><a href="devlan_pages_dashboard.php">Dashboard</a></li>
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">PWE Commits</a></li>
                                                 <li class="breadcrumb-item active">View Commits</li>
                                             </ol>
