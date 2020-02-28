@@ -57,13 +57,13 @@
                      if ($row->project_avatar == '')
                      {
                          
-                         $img = " <img class='img-fluid col-md-12' src = 'assets/img/no_project_screenshot.png'></img> ";
+                         $img = " <img class='img-fluid col-md-12' src = '../assets/img/no_project_screenshot.png'></img> ";
  
  
                      }
                      else
                      {
-                         $img = " <img class='img-fluid' src = 'assets/projects/$row->project_avatar'></img> ";
+                         $img = " <img class='img-fluid' src = '../assets/projects/$row->project_avatar'></img> ";
                      }
                     
             ?>
@@ -119,7 +119,7 @@
                                             <div class="tab-pane " id="details">
                                                 <div class="card" style="width: 18rem;">
                                                     <div class="card-body">
-                                                        <embed src="assets/projects/<?php echo $row->project_files;?>" width="900" height="500"  type="application/pdf">
+                                                        <embed src="../assets/projects/<?php echo $row->project_files;?>" width="900" height="500"  type="application/pdf">
                                                     </div>
                                                 </div>
                                             <hr>
